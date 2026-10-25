@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Aplicación de preguntas</string>
+    <string name="btn_true">true</string>
+    <string name="btn_false">false</string>
+    <string name="btn_next">next</string>
+
+    <string name="msg_acierto">Has acertado, la respuesta correcta era %1$s</string>
+    <string name="msg_fallo">Lo siento! Has elegido %1$s, pero la respuesta correcta era %2$s</string>
+
+    <!-- Pon aquí tus preguntas -->
+    <string name="pregunta_1">En Regreso al Futuro, ¿el DeLorean necesita alcanzar las 88 millas por hora para viajar en el tiempo?</string>
+    <string name="pregunta_2">En El Señor de los Anillos, ¿el Anillo Único fue creado por Gandalf?</string>
+    <string name="pregunta_3">En El silencio de los corderos, ¿Hannibal Lecter es un agente del FBI?</string>
+    <string name="pregunta_4">En Matrix, ¿Neo elige la pastilla azul?</string>
+    <string name="pregunta_5">En Project Hail Mary, ¿el alienigena amigo del protagonista se llama Rocky?</string>
+</resources>
