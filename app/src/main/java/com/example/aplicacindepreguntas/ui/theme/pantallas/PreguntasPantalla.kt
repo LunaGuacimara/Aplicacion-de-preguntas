@@ -20,10 +20,12 @@ import com.example.aplicacindepreguntas.model.Pregunta
 import com.example.aplicacindepreguntas.ui.theme.Pantalla
 import com.example.aplicacindepreguntas.ui.theme.componentes.QuestionImage
 import com.example.aplicacindepreguntas.ui.theme.componentes.QuestionText
-import com.example.aplicacindepreguntas.ui.theme.ColoresImportantes
 import com.example.aplicacindepreguntas.ui.theme.componentes.AnswerButtons
+import com.example.aplicacindepreguntas.ui.theme.componentes.BackButton
 import com.example.aplicacindepreguntas.ui.theme.componentes.ColoresImportantes
 import com.example.aplicacindepreguntas.ui.theme.componentes.NextButton
+import com.example.aplicacindepreguntas.ui.theme.componentes.RamdonButton
+import kotlin.random.Random
 
 @Composable
 fun QuizScreen(preguntas: List<Pregunta> = ListaPreguntas.preguntas) {
@@ -37,7 +39,16 @@ fun QuizScreen(preguntas: List<Pregunta> = ListaPreguntas.preguntas) {
         onNext = {
             indice = (indice + 1) % preguntas.size
             respuestaUsuario = null
+        },
+        onBack = {
+            indice = (indice -1) % preguntas.size
+            respuestaUsuario = null
+        },
+        onRamdon = {
+            indice =  Random.nextInt(0,  preguntas.size)
+            respuestaUsuario = null
         }
+
     )
 }
 
@@ -47,6 +58,8 @@ fun QuizContent(
     respuestaUsuario: Boolean?,
     onAnswer: (Boolean) -> Unit,
     onNext: () -> Unit,
+    onBack: () -> Unit,
+    onRamdon: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Surface(modifier = modifier.fillMaxSize()) {
@@ -93,6 +106,8 @@ fun QuizContent(
             )
 
             NextButton(onClick = onNext)
+            BackButton(onClick = onBack)
+            RamdonButton(onClick = onRamdon)
         }
     }
 }
